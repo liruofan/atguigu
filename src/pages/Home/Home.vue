@@ -1,12 +1,19 @@
 <template>
   <div>
-    首页
-  </div>
-</template>
+	<NavHeader class="header_style" title="弘农路亚神书画社">
+    <i class="iconfont icon-sousuo" slot="left" @click="$router.replace('/search')"></i>
+    <div class="right" slot="right">登录|注册</div>
+	</NavHeader> 
+     
+   </div>
+ </template>
 
 <script>
+import NavHeader from '../../components/NavHeader/NavHeader.vue'
 export default {
-  components: {},
+  components: {
+	  NavHeader
+  },
   props: {},
   data() {
 	return {
@@ -16,12 +23,22 @@ export default {
   created() {},
   mounted() {},
   methods: {
-
+    
   },
   computed: {},
 };
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
-
+<style lang="stylus" rel="stylesheet/stylus" scoped>
+  @import '../../common/styles//mixins.styl'
+    .icon-sousuo 
+      font-size .23rem
+      margin-left .1rem
+      padding-right .1rem
+    .right
+      font-size .14rem  
+      margin-right .1rem
+      padding-left .1rem
+    
+      
 </style>

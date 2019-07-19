@@ -1,12 +1,15 @@
 <template>
-  <div>
-    我的
+  <div class="profile">
+    <NavHeader title="我的"/>
   </div>
 </template>
 
 <script>
+import NavHeader from '../../components/NavHeader/NavHeader.vue'
 export default {
-  components: {},
+  components: {
+	NavHeader
+  },
   props: {},
   data() {
 	return {

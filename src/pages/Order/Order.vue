@@ -1,12 +1,15 @@
 <template>
-  <div>
-     订单
+  <div class="order">
+     <NavHeader title="订单列表"/>
   </div>
 </template>
 
 <script>
+import NavHeader from '../../components/NavHeader/NavHeader.vue'
 export default {
-  components: {},
+  components: {
+	NavHeader
+  },
   props: {},
   data() {
 	return {

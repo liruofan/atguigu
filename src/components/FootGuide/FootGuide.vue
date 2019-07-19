@@ -50,6 +50,8 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   @import '../../common/styles//mixins.styl'
   .footGuide
+    z-index 200
+    background-color white
     color #999999
     border-top 1px solid #f3f3f3
     position fixed
