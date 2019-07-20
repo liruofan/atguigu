@@ -19,11 +19,13 @@ export default {
   props: {},
   data() {
 	return {
-
+    
 	};
   },
   created() {},
-  mounted() {},
+  mounted() {
+    this.$store.dispatch('getSwipers')
+  },
   methods: {
     
   },

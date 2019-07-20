@@ -1,0 +1,1 @@
+export const RECEIVE_SWIPERS = 'receive_swipers'  //接受轮播图
