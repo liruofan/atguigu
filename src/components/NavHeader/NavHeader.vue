@@ -1,8 +1,12 @@
 <template>
   <div class="navHeader">
-     <slot class="con_left" name="left"></slot>
-     <div class="con_center">{{title}}</div>
-     <slot class="con_right" name="right"></slot>
+    <div class="left_wrap">
+      <slot name="left"></slot>
+    </div>
+      <div class="con_center">{{title}}</div>
+    <div class="right_wrap">
+      <slot name="right"></slot>
+    </div>
   </div>
 </template>
 
@@ -38,10 +42,24 @@ export default {
       color white
       background $green
       display flex
+      .left_wrap >>> .icon-sousuo
+        font-size .23rem
+      .left_wrap
+        margin-left .1rem
+        margin-right .3rem
+        padding-right .1rem
+      .right_wrap  
+        font-size .14rem  
+        margin-right .1rem
+        margin-left .3rem
+        padding-left .1rem
       .con_center
         text-align center
         font-size .2rem
         flex 1
+        overflow hidden
+        white-space nowrap
+        text-overflow ellipsis
       
         
 </style>

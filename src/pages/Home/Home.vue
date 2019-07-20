@@ -1,18 +1,20 @@
 <template>
   <div>
-	<NavHeader class="header_style" title="弘农路亚神书画社">
+	<NavHeader class="header_style" title="弘农路同心堂大药房东100米亚神书画社">
     <i class="iconfont icon-sousuo" slot="left" @click="$router.replace('/search')"></i>
     <div class="right" slot="right">登录|注册</div>
 	</NavHeader> 
-     
+    <Swiper/>
    </div>
  </template>
 
 <script>
 import NavHeader from '../../components/NavHeader/NavHeader.vue'
+import Swiper from '../../components/Swiper/Swiper.vue'
 export default {
   components: {
-	  NavHeader
+    NavHeader,
+    Swiper
   },
   props: {},
   data() {
@@ -30,15 +32,5 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-  @import '../../common/styles//mixins.styl'
-    .icon-sousuo 
-      font-size .23rem
-      margin-left .1rem
-      padding-right .1rem
-    .right
-      font-size .14rem  
-      margin-right .1rem
-      padding-left .1rem
-    
-      
+  
 </style>
