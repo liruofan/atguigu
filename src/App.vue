@@ -7,6 +7,7 @@
 
 <script>
 import FootGuide from './components/FootGuide/FootGuide.vue'
+import {mapActions} from 'vuex'
 
 export default {
   components: {
@@ -19,12 +20,14 @@ export default {
     };
   },
   created() {},
-  mounted() {},
+  mounted() {
+    this.getAdress()
+  },
   methods: {
-
+     ...mapActions(['getAdress'])
   },
   computed: {
-    
+     
   },
 };
 </script>
