@@ -22,9 +22,10 @@ export default {
   created() {},
   mounted() {
     this.getAdress()
+    this.getFoodCategory()
   },
   methods: {
-     ...mapActions(['getAdress'])
+     ...mapActions(['getAdress','getFoodCategory'])
   },
   computed: {
      

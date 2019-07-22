@@ -21,6 +21,9 @@ export default new Router({
 		},{
 		  path:'/profile',
 		  component:Profile
+		},{
+		  path:'/',
+		  redirect:'/home'	
 		}
 	]
 })
