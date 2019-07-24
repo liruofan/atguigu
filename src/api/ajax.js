@@ -1,4 +1,4 @@
-import Axios from 'axios'
+import axios from 'axios'
 export default function ajax (url,data={},type="GET") {
 	return new Promise(function (resolve,reject) {
 		let promise
@@ -13,10 +13,10 @@ export default function ajax (url,data={},type="GET") {
                 url = url + '?' + dataStr
 		     }
            
-		      promise = Axios.get(url)
+		      promise = axios.get(url)
 			
 		 } else {
-		   promise = Axios.post(url,data)
+		   promise = axios.post(url,data)
 	   }  
 
 	    promise.then(response => {

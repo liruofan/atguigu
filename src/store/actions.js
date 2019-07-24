@@ -1,13 +1,15 @@
 import {
    reqSwipers,
    reqAddress,
-   reqFoodCategory
+   reqFoodCategory,
+   reqShopList
 } from '../api/index.js'
 
 import {
 	RECEIVE_SWIPERS,
 	RECEIVE_ADDRESS,
 	RECEIVE_FOODCATEGORY,
+	RECEIVE_SHOPLIST
 } from './mutation-types.js'
 
 export default {
@@ -38,6 +40,17 @@ export default {
 	  commit(RECEIVE_FOODCATEGORY,{foodCategory})
 	}
        
-  }
+  },
+  
+//异步请求商家列表
+   async getShopList ({commit,state}) {
+	// const {latitude,longitude} = state
+    const result = await reqShopList(state.latitude,state.longitude)  
+	if (result.code===0) {
+		let shopList = result.data
+	  commit(RECEIVE_SHOPLIST,{shopList})
+	}
+	
+   }
 
 }

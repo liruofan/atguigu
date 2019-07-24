@@ -13,14 +13,6 @@
     	<div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
-  <!-- <div class="icons">
-     <div class="icon" v-for="(item,index) in 8" :key="index">
-       <div class="img-wrap">
-         <img class="img" src="http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png">
-       </div>
-       <p class="word">热销饮品</p>
-     </div>
-  </div> -->
 </template>
 
 <script>
@@ -28,44 +20,15 @@ import {mapState} from 'vuex'
 export default {
   components: {},
   props: {},
-  data() {
+  data () {
 	return {
     BASE_URL:'https://fuss10.elemecdn.com',
     swiperOption:{
       pagination:"swiper-pagination",
-      autoplay:false
+      autoplay:false,
+      loop:true
     },
-    // icons:[{
-    //   imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    //   text:'热销饮品'
-    // },{
-    //   imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    //   text:'热销茶品'
-    // },{
-    //   imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    //   text:'热销蛋品'
-    // },{
-    //   imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    //   text:'热销护品'
-    // },{
-    //   imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    //   text:'热销押品'
-    // },{
-    //   imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    //   text:'热销干品'
-    // },{
-    //   imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    //   text:'热销食品'
-    // },{
-    //   imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    //   text:'热销湿品'
-    // },{
-    //   imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    //   text:'热销冷品'
-    // },{
-    //   imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    //   text:'热销哈品'
-    // }]
+    
 	}
   },
   created() {},
@@ -101,7 +64,6 @@ export default {
     width 100%
     height 0
     padding-bottom 55%
-    margin-top .05rem
     .icon
       position relative
       overflow hidden

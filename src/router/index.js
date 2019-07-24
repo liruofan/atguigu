@@ -14,10 +14,10 @@ export default new Router({
 		  component:Home
 		},{
 		  path:'/search',
-		  component:Order
+		  component:Search
 		},{
 		  path:'/order',
-		  component:Search	
+		  component:Order
 		},{
 		  path:'/profile',
 		  component:Profile

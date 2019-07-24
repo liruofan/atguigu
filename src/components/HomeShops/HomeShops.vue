@@ -1,20 +1,20 @@
 <template>
-  <div class="HomeShops">
+  <div>
     <div class="title">
       <i class="iconfont icon-xuanxiang"></i>
       <span>附近商家</span>
     </div>
     <ul>
-      <li class="item_shop" v-for="(shop,index) in 5" :key="index">
-        <img class="img" src="http://img1.qunarzz.com/sight/p0/1703/58/5835f32c0ebe3bc6a3.img.jpg_250x250_f421d564.jpg">
+      <li class="item_shop" v-for="(shop,index) in shopList" :key="index">
+        <img class="img" :src="shop.image_path">
         <div class="item_info_center">
-           <div class="item_info_name"><span class="pinpai">品牌</span> 嘉禾一品（温都水城）嘉禾一品（温都水城）嘉禾一品（温都水城）嘉禾一品（温都水城）嘉禾一品（温都水城）嘉禾一品（温都水城）嘉禾一品（温都水城）嘉禾一品（温都水城）嘉禾一品（温都水城）</div>
-           <div class="item_info_rating"><span class="star">$ $ $ $ $ </span><span class="rating">4.7</span>月售106单</div>
-           <div class="item_info_delivery">￥20起送<span class="or">/</span>配送费约￥5</div>
+           <div class="item_info_name"><div class="pinpaiWrap"><div class="pinpai">品牌</div></div> {{shop.name}}</div>
+           <div class="item_info_rating"><el-rate class="star" v-model="shop.rating" disabled show-score text-color="#ff9900"></el-rate><div class="sell">月售{{shop.recent_order_num}}单</div></div>
+           <div class="item_info_delivery">￥{{shop.float_minimum_order_amount}}起送<span class="or">/</span><span>配送费约￥{{shop.float_delivery_fee}}</span></div>
         </div>
         <div class="item_info_right">
-           <div class="item_info_bzp"><span>保</span><span>准</span><span>票</span></div>
-           <span class="item_info_zhuansong">硅谷专送</span>
+           <div class="item_info_bzp"><span v-for="(support,index) in shop.supports" :key="index">{{support.icon_name}}</span></div>
+           <span class="item_info_zhuansong">{{shop.delivery_mode.text}}</span>
         </div>
       </li>
     </ul>
@@ -22,12 +22,21 @@
 </template>
 
 <script>
+// import Vue from 'vue'
+// import {Rate} from 'element-ui'
+// Vue.use(Rate)
+import Vue from 'vue'
+import {Rate} from 'element-ui'
+Vue.use(Rate)
+import {mapState} from 'vuex'
 export default {
-  components: {},
+  components: {
+    Rate
+  },
   props: {},
   data() {
 	return {
-
+    
 	};
   },
   created() {},
@@ -35,19 +44,18 @@ export default {
   methods: {
 
   },
-  computed: {},
+  computed: {
+    ...mapState(['shopList'])
+  },
 };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import '../../common/styles//mixins.styl'
-  .HomeShops
-    width 100%
     .title
       line-height .36rem
       padding-left .11rem
       text-align left
-      width 100%
       height .28rem
       font-size .16rem
       color #999
@@ -56,7 +64,7 @@ export default {
         font-size .18rem
     .item_shop
       display flex
-      border-bottom 2px solid $border
+      border-bottom .01rem solid $border
       padding .04rem 0
       height 1rem
       .img
@@ -64,6 +72,7 @@ export default {
         width .8rem
         height .8rem
       .item_info_center
+        position relative
         flex 1
         width 2rem
         height 100%
@@ -74,19 +83,43 @@ export default {
            overflow hidden
            white-space nowrap 
            text-overflow ellipsis
+          .pinpaiWrap
+            width .26rem
+            height .16rem
+            display inline-block
           .pinpai
-            padding .01rem
+            position absolute 
+            left 0
+            top .11rem
+            width .26rem
+            height .16rem
+            line-height .17rem
+            text-align center
             font-size .11rem
             background-color #ffd930
         .item_info_rating
+          overflow hidden
+          white-space nowrap
+          text-overflow ellipsis
           color #666
           line-height .2rem
           font-size .12rem
+          .star >>> .el-icon-star-on:before
+            font-size: .15rem
+          .star >>> .el-rate__item  
+            margin-right -.06rem
+          .star >>> .el-rate__text
+            font-size .12rem
+            margin-left .03rem
           .star
-            color #ff9a0d
-          .rating
-            color #ff6000
-            margin-right .08rem
+            display inline-block
+            line-height .1rem 
+            margin-left -.03rem
+          .sell
+            height .2rem
+            display inline-block
+            margin-left .07rem
+            font-size .11rem
         .item_info_delivery 
           margin-left -.02rem
           color #666
@@ -102,20 +135,19 @@ export default {
         height 100%
         .item_info_bzp
           line-height .4rem
-          font-size .12rem
+          font-size .11rem
         .item_info_bzp > span
           margin 0 .01rem
-          padding .01rem
           border 1px solid #eeeeee 
           color #666  
         .item_info_zhuansong
           margin 0 auto
           text-align center
-          width .5rem
-          line-height .15rem
-          height .13rem
+          width .38rem
+          line-height .14rem
+          height .11rem
           display block
           color #02a774  
           border 1px solid #02a774
-          font-size .1rem  
+          font-size .09rem  
 </style>

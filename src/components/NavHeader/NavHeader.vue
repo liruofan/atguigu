@@ -38,7 +38,7 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 @import '../../common/styles//mixins.styl'
 .wrap
-  padding-bottom .48rem  
+  padding-bottom .48rem
   .navHeader
     position fixed
     left 0

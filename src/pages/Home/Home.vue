@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
 	  <NavHeader class="header_style" :title="address">
       <i class="iconfont icon-sousuo" slot="left" @click="$router.replace('/search')"></i>
       <div class="right" slot="right">登录|注册</div>
@@ -7,6 +7,7 @@
     <Swiper/>
     <NavSwiper/>
     <HomeShops/>
+    
   </div>
 </template>
 

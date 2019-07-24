@@ -1,7 +1,8 @@
 <template>
   <div class="order">
      <NavHeader title="订单列表"/>
-  </div>
+    
+   </div>
 </template>
 
 <script>

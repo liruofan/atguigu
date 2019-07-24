@@ -1,4 +1,6 @@
 <template>
+<div>
+  <div class="footGuideWrap"></div>
   <div class="footGuide">
      <div class="footGuide-item" :class="{on:this.$route.path=='/home'}" @click="goto('/home')">
         <div class="icon-wrap">
@@ -25,6 +27,8 @@
         <span>我的</span>
 	 </div>
   </div>
+</div>
+  
 </template>
 
 <script>
@@ -49,6 +53,8 @@ export default {
 
 <style lang="stylus" rel="stylesheet/stylus">
   @import '../../common/styles//mixins.styl'
+  .footGuideWrap
+    padding-top .51rem
   .footGuide
     z-index 200
     background-color white
