@@ -1,6 +1,6 @@
 <template>
   <div class="swiperWrap">
-    <swiper :options="swiperOption" v-if="swipers.length">
+    <swiper :options="swiperOption" v-if="swipers.length & isKeep">
     	<swiper-slide v-for="(item,index) in swipers" :key="index">
         <img class="swiperImg" :src="item.imgUrl">
       </swiper-slide>
@@ -20,12 +20,19 @@ export default {
       pagination:'.swiper-pagination',
       loop:true,
       autoplay:3000,
-      autoplayDisableOnInteraction:false
+      autoplayDisableOnInteraction:false,
       
     },
+    isKeep:false
    };
   },
   created() {},
+  activated() {
+    this.isKeep = true
+  },
+  deactivated() {
+    this.isKeep = false
+  },
   mounted() {
   },
   methods: {
