@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>  
-    <FootGuide/>
+		<router-view></router-view>
+		<FootGuide v-if="$route.meta.showFooter"/>
   </div>
 </template>
 
@@ -24,11 +22,11 @@ export default {
   created() {},
   mounted() {
     this.getAdress()
-    this.getFoodCategory()
     this.getShopList()
+		this.getUserInfo()
   },
   methods: {
-     ...mapActions(['getAdress','getFoodCategory','getShopList'])
+     ...mapActions(['getAdress','getShopList','getUserInfo'])
   },
   computed: {
      
@@ -37,5 +35,5 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  
+
 </style>

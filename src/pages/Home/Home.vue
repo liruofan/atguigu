@@ -2,7 +2,10 @@
   <div class="home">
 	  <NavHeader class="header_style" :title="address">
       <i class="iconfont icon-sousuo" slot="left" @click="$router.replace('/search')"></i>
-      <div class="right" slot="right">登录|注册</div>
+      <router-link :to="userInfo._id ? '' : '/login'" class="right" slot="right">
+				<span v-if="!userInfo._id">登录|注册</span>
+				<span v-else><i class="iconfont icon-person"></i></span>
+			</router-link>
 	  </NavHeader> 
     <Swiper/>
     <NavSwiper/>
@@ -32,17 +35,19 @@ export default {
   },
   created() {},
   mounted() {
-    this.getSwipers()
+		this.getSwipers()
+		this.getFoodCategory()
   },
   methods: {
-    ...mapActions(['getSwipers'])
+    ...mapActions(['getSwipers','getFoodCategory'])
   },
   computed: {
-   ...mapState(['address'])
+   ...mapState(['address','userInfo'])
   },
 };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  
+  .right
+    color white
 </style>

@@ -16,7 +16,7 @@ export default function ajax (url,data={},type="GET") {
 		      promise = axios.get(url)
 			
 		 } else {
-		   promise = axios.post(url,data)
+			promise = axios.post(url,data)
 	   }  
 
 	    promise.then(response => {

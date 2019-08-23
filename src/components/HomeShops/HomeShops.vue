@@ -5,7 +5,7 @@
       <span>附近商家</span>
     </div>
     <ul>
-      <li class="item_shop" v-for="(shop,index) in shopList" :key="index">
+      <li class="item_shop" v-for="(shop,index) in shopList" :key="index" @click="$router.push(`./shop?id=${index}`)">
         <img class="img" :src="shop.image_path">
         <div class="item_info_center">
            <div class="item_info_name"><div class="pinpaiWrap"><div class="pinpai">品牌</div></div> {{shop.name}}</div>
@@ -29,9 +29,11 @@ import Vue from 'vue'
 import {Rate} from 'element-ui'
 Vue.use(Rate)
 import {mapState} from 'vuex'
+
 export default {
   components: {
-    Rate
+		Rate
+		
   },
   props: {},
   data() {
@@ -77,8 +79,8 @@ export default {
         width 2rem
         height 100%
         .item_info_name
-           line-height .4rem
-           font-weight 600
+           line-height .39rem
+           font-weight 700
            font-size .16rem
            overflow hidden
            white-space nowrap 
@@ -88,6 +90,7 @@ export default {
             height .16rem
             display inline-block
           .pinpai
+            font-weight normal
             position absolute 
             left 0
             top .11rem
@@ -102,7 +105,8 @@ export default {
           white-space nowrap
           text-overflow ellipsis
           color #666
-          line-height .2rem
+          height .21rem
+          line-height .21rem
           font-size .12rem
           .star >>> .el-icon-star-on:before
             font-size: .15rem
@@ -145,7 +149,7 @@ export default {
           text-align center
           width .38rem
           line-height .14rem
-          height .11rem
+          height .1rem
           display block
           color #02a774  
           border 1px solid #02a774

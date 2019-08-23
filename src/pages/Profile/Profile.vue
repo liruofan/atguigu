@@ -1,14 +1,15 @@
 <template>
   <div class="profile">
     <NavHeader title="我的"/>
-    <div class="user_header">
+    <div class="user_header" @click="userInfo._id ? '' : $router.push('/login')">
       <div class="portrite_wrap">
         <i class="iconfont icon-person"></i>
       </div>
       <div class="header_center">
-        <div class="login_text">登录/注册</div>
+        <div class="login_text" v-if="userInfo.name">{{userInfo.name || '登录/注册'}}</div>
+				<div class="login_text" v-if="!userInfo.name">{{userInfo._id || '登录/注册'}}</div>
         <div class="phone_text">
-         <div class="icon_wrap"><i class="iconfont icon-shouji"></i></div><span>暂无绑定手机号</span>
+         <div class="icon_wrap"><i class="iconfont icon-shouji"></i></div><span>{{userInfo.phone || '暂无绑定手机号'}}</span>
         </div>
       </div>
       <div class="header_right">
@@ -35,12 +36,15 @@
        <li><i class="iconfont icon-jifen"></i><span>积分商城</span><i class="iconfont icon-jiantou1"></i></li>
        <li><i class="iconfont icon-vip"></i><span>硅谷外卖会员卡</span><i class="iconfont icon-jiantou1"></i></li>
        <li><i class="iconfont icon-fuwu"></i><span>服务中心</span><i class="iconfont icon-jiantou1"></i></li>
-    </ul>
+		</ul>
+	  <div class="close_login" v-if="userInfo._id" @click="close_login">退出登录</div>
   </div>
 </template>
 
 <script>
 import NavHeader from '../../components/NavHeader/NavHeader.vue'
+import {mapState} from 'vuex'
+import { MessageBox,Toast} from 'mint-ui'
 export default {
   components: {
 	NavHeader
@@ -54,9 +58,20 @@ export default {
   created() {},
   mounted() {},
   methods: {
-
+   close_login () {
+		 MessageBox.confirm('您确定要退出登录吗?').then(() => {
+			  Toast({
+					message:'退出登录成功',
+					duration: 1000
+				})
+			 this.$store.dispatch('getLogout')
+						
+   },() => {})
+	}
   },
-  computed: {},
+  computed: {
+  ...mapState(['userInfo'])
+	},
 };
 </script>
 
@@ -83,6 +98,9 @@ export default {
       flex 1
       height 100%
       color white
+      overflow hidden
+      white-space nowrap
+      text-overflow ellipsis	
       .login_text
         font-weight 700
         line-height .7rem
@@ -115,7 +133,7 @@ export default {
     .balance_text
       flex 1
       .balance_num
-        line-height .65rem 
+        line-height .63rem 
         > span
           font-weight 600
           font-size .35rem
@@ -128,7 +146,7 @@ export default {
       border-right 1px solid $deepborder
       flex 1
       .discount_num
-        line-height .65rem
+        line-height .63rem
         > span
           font-weight 600
           font-size .35rem
@@ -139,7 +157,7 @@ export default {
     .score_text
       flex 1
       .score_num 
-        line-height .65rem
+        line-height .63rem
         > span
           font-weight 600
           font-size .35rem
@@ -152,7 +170,8 @@ export default {
     height .12rem
   .user_list > li
     position relative
-    line-height .6rem  
+    height .6rem
+    line-height .65rem  
     border-bottom 1px solid $deepborder
     font-size .18rem
     .iconfont
@@ -171,6 +190,15 @@ export default {
       right .1rem
       color #bbb
       font-weight 700
-      font-size .12rem 
-                     
+      font-size .12rem
+  .close_login
+    height .4rem
+    width 70%
+    background #ff5f3e
+    color white 
+    text-align center
+    line-height .42rem 
+    font-size .15rem
+    border-radius .04rem
+    margin .15rem auto
 </style>

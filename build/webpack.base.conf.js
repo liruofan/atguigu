@@ -40,14 +40,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.styl(us)?$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'stylus-loader'
-        ]
-      },
       ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,

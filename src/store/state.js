@@ -4,7 +4,11 @@ export default {
    longitude: "116.36867",
    address:'',
    foodCategory:[],
-   shopList:[]
-   
-   
+   shopList:[],
+   userInfo:{},
+	 shopInfo:{},
+	 shopGoods:[],
+	 shopRatings:[],
+	 cartFoods:[],
+	 searchShops:[]
 }

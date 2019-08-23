@@ -46,7 +46,7 @@ export default {
     right 0
     z-index 200
     height .48rem
-    line-height .48rem
+    line-height .49rem
     color white
     background $green
     display flex
@@ -56,7 +56,7 @@ export default {
       margin-left .1rem
       margin-right .3rem
       padding-right .1rem
-    .right_wrap  
+    .right_wrap
       font-size .14rem  
       margin-right .1rem
       margin-left .3rem

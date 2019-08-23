@@ -53,8 +53,6 @@ export default {
 
 <style lang="stylus" rel="stylesheet/stylus">
   @import '../../common/styles//mixins.styl'
-  .footGuideWrap
-    padding-top .51rem
   .footGuide
     z-index 200
     background-color white

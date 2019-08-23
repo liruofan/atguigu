@@ -1,46 +1,65 @@
 <template>
   <div class="swiperWrap">
-    <swiper :options="swiperOption" v-if="swipers.length & isKeep">
-    	<swiper-slide v-for="(item,index) in swipers" :key="index">
-        <img class="swiperImg" :src="item.imgUrl">
-      </swiper-slide>
-    	<div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
+    <div class="swiper-container swiper1">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for="(item,index) in swipers" :key="index">
+           <img class="swiperImg" :src="item.imgUrl" ref="img"> 
+        </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+   </div>  
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
 import {mapState} from 'vuex'
+import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.min.css'
 export default {
-  components: {},
+	components: {
+	},
   props: {},
   data() {
 	return {
-    swiperOption:{
-      pagination:'.swiper-pagination',
-      loop:true,
-      autoplay:3000,
-      autoplayDisableOnInteraction:false,
-      
-    },
-    isKeep:false
+    
    };
   },
   created() {},
   activated() {
-    this.isKeep = true
-  },
+		
+	},
   deactivated() {
-    this.isKeep = false
-  },
+		
+	},
   mounted() {
   },
   methods: {
-     
+    
   },
   computed: {
     ...mapState(['swipers'])
-  },
+	},
+	watch:{
+    swipers (value) {
+      this.$nextTick(() => {
+      new Swiper ('.swiper1', {
+    autoplay:{
+    delay: 4000,
+      disableOnInteraction: false,
+    },
+    loop:true,
+    pagination: {
+      el:'.swiper-pagination'
+    }
+	})
+   
+ })
+}
+
+ 
+}
 };
 </script>
 
