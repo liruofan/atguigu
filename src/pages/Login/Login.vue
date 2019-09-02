@@ -231,7 +231,8 @@ export default {
         background-color white
         color #cfcccc
         position absolute
-        top .16rem
+        top 50%
+        transform translateY(-50%)
         right .13rem
         font-size .14rem
         &.check
@@ -268,7 +269,8 @@ export default {
             border-color #02a774
         .switch
           position absolute
-          top .13rem
+          top 50%
+          transform translateY(-50%)
           right .05rem
   .login_button
     margin 0 .4rem 0

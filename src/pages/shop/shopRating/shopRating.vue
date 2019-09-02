@@ -69,10 +69,9 @@ export default {
 	data() {
 		return {
 			value:[], //true看有内容的  false看全部的
-			tabs:['南瓜粥','皮蛋瘦肉粥','扁豆焖面','娃娃菜炖豆腐','牛肉馅饼',],
 			select_type:2 //0满意 1不满意 2全部
 		};
-	},
+	}, 
 	created() {},
 	mounted() {
 		this.$store.dispatch('getShopRatings',() => {
