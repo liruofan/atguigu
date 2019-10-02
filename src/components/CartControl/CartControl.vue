@@ -7,7 +7,7 @@
 		</transition>
 		<div class="text" v-if="food.count">{{food.count}}</div>
 		<div class="add_wrap">
-			<i class="iconfont icon-add_circle" @click="updata_count(true)"></i>
+			<i class="iconfont icon-add_circle" @click="updata_count($event,true)"></i>
 			</div>
 	</div>
 </template>
@@ -26,8 +26,11 @@ export default {
 	created() {},
 	mounted() {},
 	methods: {
-		updata_count (isAdd) {
+		updata_count ($event,isAdd) {
 			this.$store.dispatch('updata_count',{isAdd,food:this.food})
+			if (isAdd) {
+				this.$emit('onAdd',event.target)
+			}
 		}
 	},
 	computed: {},

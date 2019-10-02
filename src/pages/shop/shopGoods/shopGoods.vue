@@ -25,14 +25,14 @@
 							<div class="second_row_wrap">
 								<span>￥{{food.price}}</span>
 							</div>
-							<cartControl class="cartControl" :food="food"></cartControl>
+							<cartControl @onAdd="onAdd" class="cartControl" :food="food"></cartControl>
 						</div>
 					</li>
 				</ul>
 			</li>
 		</ul>
 		</div>
-		<shopCart></shopCart>	
+		<shopCart ref="shopCart"></shopCart>	
 	</div>
 </div>
 </template>
@@ -93,6 +93,9 @@ export default {
 					this.scrollY = Math.abs(y)
 					// console.log(this.scrollY)
 				})
+		},
+		onAdd (target) {
+			this.$refs.shopCart.drop(target)
 		}
 	},
 	computed: {
