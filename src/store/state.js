@@ -1,7 +1,6 @@
 export default {
-   swipers:[],
-   latitude: "40.10038",
-   longitude: "116.36867",
+   latitude: "31.262238547366422",
+   longitude: "121.61741759132386",
    address:'',
    foodCategory:[],
    shopList:[],

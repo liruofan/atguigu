@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import store from './store'
 import Fastclick from 'fastclick'
+import lazyLoad from 'vue-lazyload'
+import loading from './common/img/loading.gif'
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 import 'mint-ui/lib/style.css'
@@ -16,6 +18,9 @@ import './mock/mockServer'
 import './filter'
 
 Fastclick.attach(document.body)
+Vue.use(lazyLoad,{
+	loading
+})
 // Vue.use(VueAwesomeSwiper)
 
 new Vue({

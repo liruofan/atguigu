@@ -2,30 +2,30 @@
 <div>
   <div class="footGuideWrap"></div>
   <div class="footGuide">
-     <div class="footGuide-item" :class="{on:this.$route.path=='/home'}" @click="goto('/home')">
+     <router-link tag="div" class="footGuide-item" to="/home">
         <div class="icon-wrap">
           <i class="iconfont icon-waimai"></i>
         </div>
         <span>首页</span>
-	 </div>
-	 <div class="footGuide-item" :class="{on:this.$route.path=='/search'}" @click="goto('/search')">
+	 </router-link>
+	 <router-link tag="div" class="footGuide-item" to="/search">
         <div class="icon-wrap">
           <i class="iconfont icon-search"></i>
         </div>
         <span>搜索</span>
-	 </div>
-	 <div class="footGuide-item" :class="{on:this.$route.path=='/order'}" @click="goto('/order')">
+	 </router-link>
+	 <router-link tag="div" class="footGuide-item" to="/order">
         <div class="icon-wrap">
           <i class="iconfont icon-dingdan"></i>
         </div>
         <span>订单</span>
-	 </div>
-	 <div class="footGuide-item" :class="{on:this.$route.path=='/profile'}" @click="goto('/profile')">
+	 </router-link>
+	 <router-link tag="div" class="footGuide-item" to="/profile">
         <div class="icon-wrap">
           <i class="iconfont icon-geren"></i>
         </div>
         <span>我的</span>
-	 </div>
+	 </router-link>
   </div>
 </div>
   
@@ -73,8 +73,8 @@ export default {
       flex-direction column
       line-height .2rem
       flex 1
-      &.on
-        color #02a774
+      &.active
+        color $green
       .iconfont
         font-size .22rem
         

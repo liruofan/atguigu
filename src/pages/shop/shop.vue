@@ -3,13 +3,13 @@
 		<shopHeader/>
 			<div class="tab_wrap">
 				<div class="tab_item">
-					<router-link to="/shop/goods"  replace class="tab_item_text" :class="{on:$route.path === '/shop/goods'}">点餐</router-link>
+					<router-link :to="`/shop/goods?id=${$route.query.id}`"  replace class="tab_item_text">点餐</router-link>
 				</div>
 				<div class="tab_item">
-					<router-link to="/shop/rating" replace class="tab_item_text" :class="{on:$route.path === '/shop/rating'}">评价</router-link>
+					<router-link :to="`/shop/rating?id=${$route.query.id}`" replace class="tab_item_text">评价</router-link>
 				</div>
 				<div class="tab_item">
-					<router-link to="/shop/Info" replace class="tab_item_text" :class="{on:$route.path === '/shop/Info'}">商家</router-link>
+					<router-link :to="`/shop/info?id=${$route.query.id}`" replace class="tab_item_text">商家</router-link>
 				</div>
 			</div>
 		<keep-alive>
@@ -63,7 +63,7 @@ export default {
         width .38rem
         display inline-block
         box-sizing border-box
-        &.on
+        &.active
           color $green
           border-bottom 2px solid $green 
 </style>

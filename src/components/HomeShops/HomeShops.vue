@@ -6,9 +6,9 @@
     </div>
     <ul>
       <li class="item_shop" v-for="(shop,index) in shopList" :key="index" @click="$router.push(`./shop?id=${index}`)">
-        <img class="img" :src="shop.image_path">
+        <img class="img" v-lazy="shop.image_path">
         <div class="item_info_center">
-           <div class="item_info_name"><div class="pinpaiWrap"><div class="pinpai">品牌</div></div> {{shop.name}}</div>
+           <div class="item_info_name"><div class="pinpaiWrap"><div class="pinpai">品牌</div></div>&nbsp;{{shop.name}}</div>
            <div class="item_info_rating"><el-rate class="star" v-model="shop.rating" disabled show-score text-color="#ff9900"></el-rate><div class="sell">月售{{shop.recent_order_num}}单</div></div>
            <div class="item_info_delivery">￥{{shop.float_minimum_order_amount}}起送<span class="or">/</span><span>配送费约￥{{shop.float_delivery_fee}}</span></div>
         </div>
@@ -96,6 +96,7 @@ export default {
             top .11rem
             width .26rem
             height .16rem
+            margin-right .1rem
             line-height .17rem
             text-align center
             font-size .11rem

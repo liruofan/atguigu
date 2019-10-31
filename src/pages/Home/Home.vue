@@ -35,15 +35,18 @@ export default {
   },
   created() {},
   mounted() {
-		this.getSwipers()
 		this.getFoodCategory()
+		
   },
   methods: {
-    ...mapActions(['getSwipers','getFoodCategory'])
+		...mapActions(['getFoodCategory']),
+		
   },
   computed: {
    ...mapState(['address','userInfo'])
-  },
+	},
+	
+
 };
 </script>
 

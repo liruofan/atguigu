@@ -5,7 +5,7 @@
          <i class="iconfont icon-jiantou2"></i>
       </span>
     </div>
-    <div class="title">硅谷外卖</div>
+    <div class="title">登录</div>
     <div class="login_method">
       <span class="message_login" :class="{on:!login_type}" @click="toggle(false)">短信登录</span>
       <span class="password_login" :class="{on:login_type}" @click="toggle(true)">密码登录</span>

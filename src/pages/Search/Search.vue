@@ -6,7 +6,7 @@
       <input type="submit" class="search_submit">
     </form>
     <ul class="search_ul" v-if="!noSearchShops">
-     <router-link :to="'/shop?id='+item.id" class="search_item" tag="li" v-for="item in searchShops" :key="item.id">
+     <router-link :to="{path:'/shop',query:{id:item.id}}" class="search_item" tag="li" v-for="item in searchShops" :key="item.id">
 			 <img class="port_pic" :src="imgBaseUrl + item.image_path">
 			<div class="shop_name">{{item.name}}</div>
 			 <div class="month_sale">月销 {{item.month_sales||item.recent_order_num}} 单</div>
@@ -33,11 +33,14 @@ export default {
 	};
   },
   created() {},
-  mounted() {},
+  mounted() {
+		console.log(this.searchShops)
+	},
   methods: {
    search () {
 		 const keyword = this.keyword.trim()
     if (keyword) {
+			this.noSearchShops = false
 			this.$store.dispatch('searchShops',keyword)
 			
 		}
@@ -50,11 +53,9 @@ export default {
 		searchShops (value) {
 			if(!value.length) { // 没有数据
           this.noSearchShops = true
-        } else {// 有数据
-          this.noSearchShops = false
         }
 		}
-	}
+	} 
 };
 </script>
 

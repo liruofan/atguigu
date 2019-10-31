@@ -14,7 +14,7 @@
 				<ul class="foods">
 					<li class="food" v-for="(food,index) in shopGood.foods" :key="index">
 						<div class="left_wrap">
-							<img :src="food.image">
+							<img v-lazy="food.image">
 						</div>
 						<div class="right_wrap">
 							<div class="first_row_wrap">

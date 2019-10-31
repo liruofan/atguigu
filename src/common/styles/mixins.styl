@@ -1,10 +1,15 @@
-$green = #02a774;
-$yellow = #F5A100;
-$bc = #e4e4e4;
-$border = #f3f3f3;
-$deepborder = #e6e6e6;
-ellipsis(){
+$green = #02a774
+$yellow = #F5A100
+$bc = #e4e4e4
+$border = #f3f3f3
+$deepborder = #e6e6e6
+$color-text-l = rgba(255, 255, 255, 0.7)
+$color-text-ll = rgba(255, 255, 255, 1)
+ellipsis()
   overflow hidden
   white-space nowrap
-  text-overflow ellipsis	
-}
+  text-overflow ellipsis
+bg-image($url)
+  background-image url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image url($url + "@3x.png")

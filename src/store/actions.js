@@ -1,5 +1,4 @@
 import {
-   reqSwipers,
    reqAddress,
    reqFoodCategory,
 	 reqShopList,
@@ -12,7 +11,6 @@ import {
 } from '../api/index.js'
 
 import {
-	RECEIVE_SWIPERS,
 	RECEIVE_ADDRESS,
 	RECEIVE_FOODCATEGORY,
 	RECEIVE_SHOPLIST,
@@ -28,15 +26,6 @@ import {
 } from './mutation-types.js'
 
 export default {
-//异步请求轮播图数据
-  async getSwipers ({commit}) {
-	  const result = await reqSwipers()
-	  if (result.code===0) {
-		 let swiperInfo = result.data
-		 commit(RECEIVE_SWIPERS,{swiperInfo})
-	  }
-	},
-
 //异步请求地址数据
   async getAdress ({commit,state}) {
 	 const geohash = state.latitude + ',' + state.longitude
