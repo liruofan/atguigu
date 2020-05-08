@@ -1,21 +1,15 @@
-# g-shop
+### 第一个：商品列表
+![](https://github.com/liruofan/atguigu/tree/master/image/CgoB5l13HCyAa-HgAAF5vIw5qqs575.png)
+![](https://github.com/liruofan/atguigu/tree/master/image/CgoB5l13HDuAbOTHAAFOntF_hNE166.png)
 
-> A Vue.js project
+### 第二个：商家评价
+![](https://github.com/liruofan/atguigu/tree/master/image/CgoB5l13HFKAa_GUAAEIHhRsZG4468.png)
 
-## Build Setup
+### 第三个：商家活动
+![](https://github.com/liruofan/atguigu/tree/master/image/CgoB5l13HFyAG6CHAAEmwYXgfEk124.png)
 
-``` bash
-# install dependencies
-npm install
+### 第四个：短信登陆
+![](https://github.com/liruofan/atguigu/tree/master/image/CgoB5l13HGSAd_vAAABWujEvFyU169.png)
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### 第五个：密码登陆
+![](https://github.com/liruofan/atguigu/tree/master/image/CgotOV13HG6AJY-aAABPLKb4x_c301.png)
