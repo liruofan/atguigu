@@ -3,7 +3,8 @@
 	<NavHeader class="header_style" title="弘农路亚神书画社">
     <i class="iconfont icon-sousuo" slot="left" @click="$router.replace('/search')"></i>
     <div class="right" slot="right">登录|注册</div>
-	</NavHeader> 
+	</NavHeader>
+  navHeader333
    </div>
  </template>
 
