@@ -4,7 +4,7 @@
     <i class="iconfont icon-sousuo" slot="left" @click="$router.replace('/search')"></i>
     <div class="right" slot="right">登录|注册</div>
 	</NavHeader> 
-     
+  navHeader2
    </div>
  </template>
 
